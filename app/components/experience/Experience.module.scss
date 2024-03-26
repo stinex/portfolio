@@ -1,0 +1,75 @@
+@import '../../assets/styles/variables.scss';
+.item {
+  display: grid;
+  grid-template-columns: 1fr 5fr auto;
+  margin-bottom: calc(var(--index) * 0.9);
+  padding: 0 15px;
+  // gap: 30px 0;
+
+  .data {
+    font-size: calc(var(--index) * 0.5);
+    cursor: pointer;
+  }
+  .company {
+    cursor: pointer;
+
+    .name {
+      font-size: calc(var(--index) * 0.8);
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+    .job_title {
+      font-size: calc(var(--index) * 0.6);
+      opacity: 0.7;
+    }
+  }
+  .description {
+    font-size: calc(var(--index) * 0.7);
+    line-height: calc(var(--index) * 1);
+    max-height: 0px;
+    position: relative;
+    margin: 0px;
+    overflow: hidden;
+    grid-row: 2;
+    grid-column: 1/-1;
+    transition: margin 0.2s ease-in-out, 0.3s ease-in-out;
+    will-change: max-height, margin;
+    opacity: 0.6;
+    max-width: 1200px;
+
+    ul {
+      padding-left: 15px;
+      li {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &.read {
+      max-height: 4500px;
+      margin: 30px 0 0;
+
+      &::after {
+        height: 0;
+      }
+    }
+  }
+  .btn {
+    font-size: calc(var(--index) * 0.5);
+    text-transform: uppercase;
+    padding-left: 50px;
+    cursor: pointer;
+    align-self: center;
+  }
+}
+
+@media (max-width: $mq-mobile--lg) {
+  .item {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr auto;
+  }
+}

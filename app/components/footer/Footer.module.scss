@@ -1,0 +1,80 @@
+@import '../../assets/styles/variables.scss';
+
+.footer {
+  background: var(--color-black);
+  padding: 25px 0;
+  box-shadow: 2px 2px 2px #000;
+
+  .wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr minmax(max-content, auto) 2fr;
+
+    .reserved {
+      font-size: calc(var(--index) * 0.5);
+      line-height: 1em;
+      opacity: 0.6;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+
+      a {
+        font-size: calc(var(--index) * 0.7);
+        line-height: 1em;
+        opacity: 0.6;
+        transition: var(--transition);
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: flex-end;
+
+      .social {
+        opacity: 0.6;
+        transition: var(--transition);
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mq-tablet) {
+  .footer {
+    .wrapper {
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 20px;
+      .nav {
+        gap: 10px;
+      }
+    }
+  }
+}
+@media (max-width: $mq-mobile--lg) {
+  .footer {
+    .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
+      .nav {
+        gap: 10px;
+      }
+      .socials {
+        justify-content: center;
+      }
+    }
+  }
+}

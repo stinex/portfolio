@@ -1,0 +1,14 @@
+.link {
+  padding: 15px 25px;
+  font-size: calc(var(--index) * 3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  transition: var(--transition-cursor);
+
+  &:hover {
+    transform: translateX(-15px);
+    opacity: .2;
+  }
+}

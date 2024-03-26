@@ -1,0 +1,15 @@
+@import '../../assets/styles/variables.scss';
+
+.text {
+  font-size: calc(var(--index) * 14);
+  line-height: calc(var(--index) * 14);
+  letter-spacing: -10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: $mq-mobile--lg) {
+  .text {
+    letter-spacing: -6px;
+  }
+}
